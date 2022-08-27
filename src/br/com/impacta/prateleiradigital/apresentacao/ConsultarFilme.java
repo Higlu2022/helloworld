@@ -37,6 +37,7 @@ public class ConsultarFilme {
         } catch (RuntimeException e) {
 
             System.out.println(e);
+            System.out.println("Teste");
         }
 
     }
