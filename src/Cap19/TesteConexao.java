@@ -22,10 +22,10 @@ public class TesteConexao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(queryInsert);
 
-            preparedStatement.setInt(1, 5);
-            preparedStatement.setString(2, "Fernanda");
-            preparedStatement.setString(3, "55475878487");
-            preparedStatement.setInt(4, 4124);
+            preparedStatement.setNull(1, Types.INTEGER);
+            preparedStatement.setString(2, "Renan");
+            preparedStatement.setString(3, "25698125896");
+            preparedStatement.setInt(4, 8082);
 
             preparedStatement.executeUpdate();
 

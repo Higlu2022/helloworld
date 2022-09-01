@@ -2,6 +2,8 @@ package br.com.impacta.prateleiradigital.controle;
 
 import br.com.impacta.prateleiradigital.negocio.Filme;
 import br.com.impacta.prateleiradigital.persistencia.FilmeDAO;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class FilmeControlador {
@@ -9,13 +11,8 @@ public class FilmeControlador {
     FilmeDAO filmeDAO = new FilmeDAO();
 
 
-    /**
-     * Adiciona um filme
-     *
-     * @param filme
-     */
-    public void adicionar(Filme filme) {
-        //TODO implementar regra para add um filme
+    public void adicionar(Filme filme) throws SQLException {
+
         filmeDAO.incluir(filme);
     }
 
@@ -33,9 +30,9 @@ public class FilmeControlador {
         return filmeDAO.consultarListaDeFilmes(tituloParcial, genero, anoInicial, anoFinal);
     }
 
-    public List<Filme> consultarFilmes(String tituloParcial, String genero, int ano) {
-        //TODO implementar regra para consultar uma lista de filmes
-        return filmeDAO.consultarListaDeFilmes(tituloParcial, genero, ano);
+    public List<Filme> consultarFilmes(String genero, int ano, String tituloParcial) throws SQLException {
+
+        return filmeDAO.consultarListaDeFilmes(genero, ano, tituloParcial);
     }
 
     /**

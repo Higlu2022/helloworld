@@ -1,5 +1,6 @@
 package br.com.impacta.prateleiradigital.apresentacao;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import br.com.impacta.prateleiradigital.controle.FilmeControlador;
@@ -53,13 +54,15 @@ public class AdicionarNovoFilme {
              * Instancia e uso do objeto ao mesmo tempo, recomendado em casos onde o retorno não importa (Não é salvo em atributo)
              */
             new FilmeControlador().adicionar(filme);
-            System.out.println(filme.toString());
+
 
             /**
              * Tratamento de erros
              */
         } catch (NumberFormatException e) {
             System.out.println("Insira um valor numérico");
+        } catch (SQLException e) {
+            System.out.println(e);
         }
 
     }
