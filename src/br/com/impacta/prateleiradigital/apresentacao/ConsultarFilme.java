@@ -34,7 +34,7 @@ public class ConsultarFilme {
             if (filmeLista.size() > 0) {
                 filmeLista.forEach(filme -> System.out.println(filme));
             } else {
-                System.out.println("Nenhum filme encontrado");
+                System.out.println("Nenhum filme encontrado!!!");
             }
 
         } catch (RuntimeException e) {
